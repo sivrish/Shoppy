@@ -11,14 +11,14 @@
 
 @implementation Product
 
--(id) initWithProductName:(NSString *)name AndProductQuantity:(NSNumber *)quantity AndProductdescription:(NSString *)desc AndProductImage:(NSString *)image AndProductPrice:(NSDecimalNumber *)price{
+-(id) initWithProductName:(NSString *)proName AndProductQuantity:(NSNumber *)quantity AndProductdescription:(NSString *)desc AndProductImage:(NSString *)image AndProductPrice:(NSNumber *)price{
     
     self = [super init];
     if(self){
-        self.name = name;
+        self.proName = proName;
         self.desc = desc;
         self.quantity = quantity;
-        self.image = image;
+        self.proImage = image;
         self.price = price;
     }
     return self;

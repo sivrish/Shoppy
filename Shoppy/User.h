@@ -8,9 +8,9 @@
 
 @interface User : NSObject
 
-@property NSString *name;
-@property NSMutableArray *cart;
-@property NSNumber *cashInWallet;
+@property (strong) NSString *Name;
+@property (strong) NSMutableArray *cart;
+@property (strong) NSNumber *cashInWallet;
 
 -(id) initWithUserName: (NSString *) name AndCashInUserWallet: (NSNumber *) cashInWallet;
 

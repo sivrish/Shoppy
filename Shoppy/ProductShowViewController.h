@@ -13,14 +13,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *productName;
 @property (weak, nonatomic) IBOutlet UILabel *productDescription;
 @property (weak, nonatomic) IBOutlet UILabel *productPrice;
+@property (weak, nonatomic) IBOutlet UITextField *quantityGetter;
 @property (weak, nonatomic) IBOutlet UILabel *productQuantity;
-@property (weak, nonatomic) NSString *image;
-@property (weak, nonatomic) NSString *name;
-@property (weak, nonatomic) NSString *desc;
-@property (weak, nonatomic) NSString *price;
-@property (weak, nonatomic) NSString *quantity;
-
-
-- (IBAction)addToCart:(UIButton *)sender;
-
+@property (weak, nonatomic) IBOutlet UILabel *selectedQuantity;
+@property (strong, nonatomic) NSString *image;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *desc;
+@property (strong, nonatomic) NSNumber *price;
+@property (strong, nonatomic) NSNumber *quantity;
+@property (weak, nonatomic) IBOutlet UILabel *selectedProductFinalPrice;
+- (IBAction)addSelectedQuantity:(id)sender;
+- (IBAction)minusSelectedQuantity:(id)sender;
 @end

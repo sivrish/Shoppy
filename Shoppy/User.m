@@ -14,8 +14,9 @@
 -(id) initWithUserName:(NSString *)name AndCashInUserWallet:(NSNumber *)cashInWallet{
     self = [super init];
     if(self){
-        self.name = name;
+        self.Name = name;
         self.cashInWallet = cashInWallet;
+        self.cart = [[NSMutableArray alloc] init];
     }
     return self;
 }

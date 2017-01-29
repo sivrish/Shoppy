@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Utility.h"
+#import "MDTableViewCell.h"
 
-@interface ProductsTableViewCell : UITableViewCell
+@interface ProductsTableViewCell : MDTableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *productImage;
 @property (weak, nonatomic) IBOutlet UILabel *productName;

@@ -8,11 +8,11 @@
 
 @interface  Product : NSObject
 
-@property NSString *name;
-@property NSNumber *quantity;
-@property NSString *desc;
-@property NSString *image;
-@property NSDecimalNumber *price;
-- (id) initWithProductName: (NSString *) name AndProductQuantity: (NSNumber *) quantity AndProductdescription: (NSString *) desc AndProductImage: (NSString *) image AndProductPrice: (NSDecimalNumber *) price;
+@property (strong) NSString *proName;
+@property (strong) NSNumber *quantity;
+@property (strong) NSString *desc;
+@property (strong) NSString *proImage;
+@property (strong) NSNumber *price;
+- (id) initWithProductName: (NSString *) proName AndProductQuantity: (NSNumber *) quantity AndProductdescription: (NSString *) desc AndProductImage: (NSString *) image AndProductPrice: (NSNumber *) price;
 
 @end
