@@ -11,12 +11,13 @@
 
 @implementation  User
 
--(id) initWithUserName:(NSString *)name AndCashInUserWallet:(NSNumber *)cashInWallet{
+-(id) initWithUserName:(NSString *)name AndCashInUserWallet:(NSNumber *)cashInWallet AndCartValue:(NSNumber *)cartValue{
     self = [super init];
     if(self){
         self.Name = name;
         self.cashInWallet = cashInWallet;
         self.cart = [[NSMutableArray alloc] init];
+        self.cartValue = cartValue;
     }
     return self;
 }

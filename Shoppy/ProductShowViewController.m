@@ -10,6 +10,7 @@
 #import "Utility.h"
 #import "CartItem.h"
 #import "Product.h"
+#import "User.h"
 
 @implementation ProductShowViewController
 
@@ -27,35 +28,82 @@
 - (IBAction)addToCart:(UIButton *)sender {
     Warehouse *warehouse = [Utility warehouse];
     User *user = [Utility user];
-    int i;
+    int i,count = 0 ;
     for(i=0;i<[warehouse productsList].count;i++){
         if([self.name isEqualToString: [[[warehouse productsList] objectAtIndex:i] proName]]){
             break;
         }
     }
-//    if([user cart].count == 0 )
-//    {
+    if([user cart].count == 0 )
+    {
         CartItem *cartItem = [[CartItem alloc] init];
         cartItem.cartProductname = [[[warehouse productsList] objectAtIndex:i] proName];
         cartItem.cartProductId = [NSNumber numberWithInt:i];
         cartItem.cartProductPrice = [[[warehouse productsList] objectAtIndex:i] price];
         cartItem.selectedQuantityInCart = [NSNumber numberWithInt:[self.selectedQuantity.text intValue]];
         cartItem.cartProductImage = [[[warehouse productsList] objectAtIndex:i] proImage];
+        int a = [[[[warehouse productsList] objectAtIndex:i] price] intValue];
+        int b = [self.selectedQuantity.text intValue];
+        a = a * b;
+        a = a + [[user cartValue] intValue];
+        user.cartValue = [NSNumber numberWithInt:a];
+        NSLog(@"%@",[user cartValue]);
         [[user cart] addObject:cartItem];
+        [self.tabBarController setSelectedIndex:1];
+        return;
         
-//    }else{
-//        
-//        for(j=0;j<[user cart].count;j++){
-//            if([self.name isEqualToString: [[[user cart] objectAtIndex:j] cartProductname]]){
-//                NSNumber *quantit = [[[user cart] objectAtIndex:j] selectedQuantityInCart];
-//                int z = [quantit intValue] + [[NSNumber numberWithInt:[self.selectedQuantity.text intValue]] intValue];
-//                quantit = [NSNumber numberWithInt:z];
-//                [[[user cart] objectAtIndex:j] selectedQuantityInCart] = quantit;
-//                break;
-//            }
-//        }
-//        
-//    }
+    }
+        
+    for(int j=0;j<[user cart].count;j++){
+        if([self.name isEqualToString: [[[user cart] objectAtIndex:j] cartProductname]]){
+                NSNumber *quantit = [[[user cart] objectAtIndex:j] selectedQuantityInCart];
+                int z = [quantit intValue] + [[NSNumber numberWithInt:[self.selectedQuantity.text intValue]] intValue];
+                quantit = [NSNumber numberWithInt:z];
+                CartItem *oldObj = [[user cart] objectAtIndex:j];
+                int k = [[oldObj cartProductId] intValue];
+                Product *pro = [[warehouse productsList] objectAtIndex:k];
+                if([quantit intValue] <= [[pro quantity] intValue]){
+                    oldObj.selectedQuantityInCart = quantit;
+                    int a = [[[[warehouse productsList] objectAtIndex:i] price] intValue];
+                    int b = [self.selectedQuantity.text intValue];
+                    a = a * b;
+                    a = a + [[user cartValue] intValue];
+                    user.cartValue = [NSNumber numberWithInt:a];
+                    NSLog(@"%@",[user cartValue]);
+                    count++;
+                    [self.tabBarController setSelectedIndex:1];
+                    break;
+                } else{
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"No Stock" message:@"There is no availability for the selected quantity in our warehouse. Select within the available quantity." preferredStyle:UIAlertControllerStyleAlert]; // 7
+                
+                    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                        NSLog(@"You pressed button OK");
+                    }];
+                    [alert addAction:defaultAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                    return;
+                }
+        }
+    }
+    
+    if(count == 0){
+        CartItem *cartItem = [[CartItem alloc] init];
+        cartItem.cartProductname = [[[warehouse productsList] objectAtIndex:i] proName];
+        cartItem.cartProductId = [NSNumber numberWithInt:i];
+        cartItem.cartProductPrice = [[[warehouse productsList] objectAtIndex:i] price];
+        cartItem.selectedQuantityInCart = [NSNumber numberWithInt:[self.selectedQuantity.text intValue]];
+        cartItem.cartProductImage = [[[warehouse productsList] objectAtIndex:i] proImage];
+        int a = [[[[warehouse productsList] objectAtIndex:i] price] intValue];
+        int b = [self.selectedQuantity.text intValue];
+        a = a * b;
+        a = a + [[user cartValue] intValue];
+        user.cartValue = [NSNumber numberWithInt:a];
+        NSLog(@"%@",[user cartValue]);
+        [[user cart] addObject:cartItem];
+        [self.tabBarController setSelectedIndex:1];
+        return;
+    }
+    
 //    NSLog(@"quantity: %@",[[[user cart] objectAtIndex:0] selectedQuantity]);
 }
 

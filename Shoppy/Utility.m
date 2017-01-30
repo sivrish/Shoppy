@@ -15,7 +15,7 @@ static Warehouse* _warehouse = nil;
 @implementation Utility
 
 +(void) load{
-    _user = [[User alloc] initWithUserName:@"Sivrish" AndCashInUserWallet:[NSNumber numberWithInteger:200000]];
+    _user = [[User alloc] initWithUserName:@"Sivrish" AndCashInUserWallet:[NSNumber numberWithInt:200000] AndCartValue:[NSNumber numberWithInt:0]];
     _warehouse = [[Warehouse alloc] init];
 
 }

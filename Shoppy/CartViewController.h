@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CartViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
-
+- (IBAction)checkout:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *totalValue;
+@property (weak, nonatomic) IBOutlet UILabel *walletBalance;
 @end

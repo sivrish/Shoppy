@@ -22,7 +22,7 @@
     Warehouse *warehouse = [Utility warehouse];
     Product *product = [[Product alloc] initWithProductName:@"MacBook Pro 2016" AndProductQuantity:[NSNumber numberWithInteger:10] AndProductdescription:@"This is a new product from the Apple Inc which is formerly called as Apple Computers" AndProductImage:@"macbook.jpg" AndProductPrice:[NSDecimalNumber decimalNumberWithString:@"100000"]];
     [[warehouse productsList] addObject:product];
-    product = [[Product alloc] initWithProductName:@"GTX 1080" AndProductQuantity:[NSNumber numberWithInteger:10] AndProductdescription:@"This is a new product from Nvidia which is the powerful GPU in the market right now" AndProductImage:@"GTX.jpg" AndProductPrice:[NSDecimalNumber decimalNumberWithString:@"60000"]];
+    product = [[Product alloc] initWithProductName:@"GTX 1080" AndProductQuantity:[NSNumber numberWithInteger:1] AndProductdescription:@"This is a new product from Nvidia which is the powerful GPU in the market right now" AndProductImage:@"GTX.jpg" AndProductPrice:[NSDecimalNumber decimalNumberWithString:@"60000"]];
     [[warehouse productsList] addObject:product];
     product = [[Product alloc] initWithProductName:@"Corsair 570X" AndProductQuantity:[NSNumber numberWithInteger:10] AndProductdescription:@"This is a new product from Corsair which has the new 4 side tempered glass body and featuring 3 RGB fans" AndProductImage:@"corsair.jpg" AndProductPrice:[NSDecimalNumber decimalNumberWithString:@"15000"]];
     [[warehouse productsList] addObject:product];

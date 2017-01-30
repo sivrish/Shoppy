@@ -39,7 +39,27 @@
     int i = [[[[user cart] objectAtIndex:indexPath.row] selectedQuantityInCart] intValue];
     i = i * [[[[user cart] objectAtIndex:indexPath.row] cartProductPrice] intValue];
     cell.productFinalPrice.text = [NSString stringWithFormat:@"₹ %d",i];
+    self.totalValue.text = [NSString stringWithFormat:@"Total cart value : ₹ %@",[user cartValue]];
+    self.walletBalance.text = [NSString stringWithFormat:@"Wallet balance : ₹ %@",[user cashInWallet]];
     return cell;
+}
+
+- (IBAction)checkout:(id)sender {
+//    User *user = [Utility user];
+//    Warehouse *warehouse = [Utility warehouse];
+//    int a = [[user cashInWallet] intValue];
+//    int b = [[user cartValue] intValue];
+//    int i;
+//    if(a>b){
+//        a = a - b;
+//        user.cashInWallet = [NSNumber numberWithInt:a];
+//        user.cartValue = [NSNumber numberWithInt:0];
+//        for(i=0;i<[user cart].count;i++){
+//            CartItem *cartItem = [user cart] objectAtIndex:i];
+//            [warehouse productsList][cartItem cartProductId];
+//        }
+//        [[user cart] removeAllObjects];
+//    }
 }
 
 @end

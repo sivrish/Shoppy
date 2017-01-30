@@ -317,6 +317,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="kce-C0-w9c">
+                            <rect key="frame" x="0.0" y="178" width="414" height="150"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total cart value :  ₹ 10000000000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sg-ss-UGH">
+                                    <rect key="frame" x="8" y="8" width="398" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet balance :  ₹ 10000000000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gA9-po-cji">
+                                    <rect key="frame" x="8" y="31" width="398" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gu-zi-obq" customClass="MDButton">
+                                    <rect key="frame" x="75" y="65" width="264" height="36"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                    <state key="normal" title="Checkout">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="checkout:" destination="p7l-fO-8kb" eventType="touchUpInside" id="3cR-y3-9Ys"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7I5-ti-bOm" customClass="MDButton">
+                                    <rect key="frame" x="75" y="106" width="264" height="36"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                    <state key="normal" title="Continue Shopping">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="checkout:" destination="p7l-fO-8kb" eventType="touchUpInside" id="D8R-g8-ECN"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <constraints>
+                                <constraint firstItem="5gu-zi-obq" firstAttribute="top" secondItem="gA9-po-cji" secondAttribute="bottom" constant="13" id="DYv-Ir-I09"/>
+                                <constraint firstItem="4sg-ss-UGH" firstAttribute="leading" secondItem="kce-C0-w9c" secondAttribute="leadingMargin" id="OOG-mO-6Xv"/>
+                                <constraint firstItem="gA9-po-cji" firstAttribute="trailing" secondItem="kce-C0-w9c" secondAttribute="trailingMargin" id="VzH-LS-QFH"/>
+                                <constraint firstItem="gA9-po-cji" firstAttribute="leading" secondItem="kce-C0-w9c" secondAttribute="leadingMargin" id="WN6-nb-VQP"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="7I5-ti-bOm" secondAttribute="trailing" constant="67" id="aKZ-gK-rdf"/>
+                                <constraint firstItem="7I5-ti-bOm" firstAttribute="leading" secondItem="kce-C0-w9c" secondAttribute="leadingMargin" constant="67" id="bLB-9R-RU8"/>
+                                <constraint firstItem="5gu-zi-obq" firstAttribute="leading" secondItem="kce-C0-w9c" secondAttribute="leadingMargin" constant="67" id="cho-Qj-LuN"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="5gu-zi-obq" secondAttribute="trailing" constant="67" id="eKi-JT-6d6"/>
+                                <constraint firstItem="gA9-po-cji" firstAttribute="top" secondItem="4sg-ss-UGH" secondAttribute="bottom" constant="2" id="gdg-OW-4dS"/>
+                                <constraint firstItem="4sg-ss-UGH" firstAttribute="trailing" secondItem="kce-C0-w9c" secondAttribute="trailingMargin" id="j9i-Sf-7xd"/>
+                                <constraint firstItem="4sg-ss-UGH" firstAttribute="top" secondItem="kce-C0-w9c" secondAttribute="topMargin" id="sqD-OI-tTy"/>
+                                <constraint firstItem="7I5-ti-bOm" firstAttribute="bottom" secondItem="kce-C0-w9c" secondAttribute="bottomMargin" id="uwU-Ma-Ru9"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartCell" rowHeight="150" id="vyY-eY-em3" customClass="CartTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="414" height="150"/>
@@ -378,6 +433,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="W9h-ZL-L8s"/>
+                    <connections>
+                        <outlet property="totalValue" destination="4sg-ss-UGH" id="xls-gu-J3Y"/>
+                        <outlet property="walletBalance" destination="gA9-po-cji" id="Dgc-Os-LXo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9O-kX-lhy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

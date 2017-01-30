@@ -11,7 +11,8 @@
 @property (strong) NSString *Name;
 @property (strong) NSMutableArray *cart;
 @property (strong) NSNumber *cashInWallet;
+@property (strong,readwrite) NSNumber *cartValue;
 
--(id) initWithUserName: (NSString *) name AndCashInUserWallet: (NSNumber *) cashInWallet;
+-(id) initWithUserName: (NSString *) name AndCashInUserWallet: (NSNumber *) cashInWallet AndCartValue: (NSNumber *) cartValue;
 
 @end
